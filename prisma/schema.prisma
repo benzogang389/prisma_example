@@ -1,0 +1,20 @@
+datasource db {
+  provider = "postgresql"
+  url = env("DB_URL")
+  // if no postgresql, use local db file
+  // provider = "sqlite"
+  // url      = "file:./dev.db"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id        Int      @id @default(autoincrement())
+    name      String?
+    email     String   @unique
+    password  String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

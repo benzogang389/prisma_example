@@ -1,0 +1,33 @@
+type Query {
+  isOk: Boolean!
+  getUserById(id: ID!): User!
+  forwardGeocode(search: String!, autocomplete: Boolean): [GeocodingSearchResult!]!
+  reverseGeocode(latFloat: Float!, longFloat: Float!): [GeocodingSearchResult!]!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+}
+
+type User {
+  id: ID!
+  name: String
+  email: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type GeocodingSearchResult {
+  id: String!
+  center: [Float!]!
+  placeName: String!
+  placeText: String!
+}
+
+scalar DateTime

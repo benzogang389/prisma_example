@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.13.3",
+    "@prisma/client": "^3.14.0",
+    "apollo-server": "^3.8.2",
+    "argon2": "^0.28.5",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "graphql-geojson": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "nodemon": "^2.0.16"
+  }
+}
